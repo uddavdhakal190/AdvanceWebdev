@@ -1,14 +1,14 @@
-# Project phase 1 - Definition and planning
+# Project Phase 1 - Definition and planning
 
-Expense Tracker - Phase 1: Definition & Planning
+The Expense Tracker 
 
 ## 1. User Personas
 
-Persona 1: Sarah Johnson
+Persona 1: Niresh Lamsal
 
-Age: 28
+Age: 30
 
-Occupation: Freelance Designer
+Occupation: Digital Marketer
 
 Tech Level: Medium
 
@@ -19,9 +19,9 @@ Pain Points: Finds spreadsheets too complex, often forgets to log expenses.
 Behavior: Uses web apps on both desktop and mobile; prefers simple, intuitive interfaces.
 
 
-Persona 2: Mark Evans
+Persona 2: Bikram Poudel
 
-Age: 35
+Age: 36
 
 Occupation: Small Business Owner
 
@@ -34,7 +34,9 @@ Pain Points: Needs clear transaction categories, easy export options, and automa
 Behavior: Uses financial apps frequently; values automation and reporting features.
 
 
-Age: 22
+Persona 3: Bharat Dawadi
+
+Age: 24
 
 Occupation: University Student
 
@@ -212,6 +214,7 @@ AddExpenseForm.jsx (Form for adding expenses)
 ExpenseList.jsx (List of all expenses)
 
 Reports.jsx (Charts & insights)
+
 
 ## 5. Project Management and User Testing
 
