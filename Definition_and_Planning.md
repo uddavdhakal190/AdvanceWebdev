@@ -2,55 +2,60 @@
 
 ExpenseWise 
 
-## 1. User Personas
+**Phase 1 – Definition and Planning**
 
-Persona 1: Niresh Lamsal
+---
 
-Age: 30
+### 1. User Personas (Based on Expense Management System)
 
-Occupation: Digital Marketer
+**Persona 1: Alisha Rai – Young Professional**
+- **Age**: 26
+- **Profession**: Marketing Executive
+- **Location**: Kathmandu, Nepal
+- **Tech Comfort**: High
+- **Goals**:
+  - Track monthly bills and daily expenses
+  - Get visual reports of where her salary goes
+- **Pain Points**:
+  - Time-consuming manual tracking
+  - Wants a mobile-responsive app
+- **Expectations**:
+  - Clean dashboard
+  - Fast, secure login
+  - Easy-to-use charts
 
-Tech Level: Medium
+**Persona 2: Prakash Bhandari – Small Business Owner**
+- **Age**: 38
+- **Business**: Local Grocery Store
+- **Location**: Pokhara, Nepal
+- **Tech Comfort**: Medium
+- **Goals**:
+  - Track store and personal expenses separately
+  - Generate expense reports monthly for accounting
+- **Pain Points**:
+  - Needs access control for staff
+  - Needs to attach scanned receipts
+- **Expectations**:
+  - Role-based access
+  - Report generation by date/category
 
-Goals: Wants to track monthly expenses easily and analyze spending trends.
+**Persona 3: Sneha Shrestha – Student**
+- **Age**: 21
+- **Education**: BBA Student
+- **Location**: Lalitpur, Nepal
+- **Tech Comfort**: High
+- **Goals**:
+  - Track daily lunch, transport, and stationery expenses
+  - Learn budgeting through insights
+- **Pain Points**:
+  - No previous habit of tracking money
+- **Expectations**:
+  - Intuitive design
+  - Color-coded categories
 
-Pain Points: Finds spreadsheets too complex, often forgets to log expenses.
+---
 
-Behavior: Uses web apps on both desktop and mobile; prefers simple, intuitive interfaces.
-
-
-Persona 2: Bikram Poudel
-
-Age: 36
-
-Occupation: Small Business Owner
-
-Tech Level: High
-
-Goals: Wants to categorize business expenses and export data for tax reporting.
-
-Pain Points: Needs clear transaction categories, easy export options, and automated calculations.
-
-Behavior: Uses financial apps frequently; values automation and reporting features.
-
-
-Persona 3: Bharat Dawadi
-
-Age: 24
-
-Occupation: University Student
-
-Tech Level: Medium
-
-Goals: Wants to set budgets and track personal spending habits to save money.
-
-Pain Points: Struggles with overspending and wants alerts when exceeding budget limits.
-
-Behavior: Primarily mobile user; prefers push notifications and visual data representation.
-
-
-
-## 2. Use Cases and User Flows
+### 2. Use Cases and User Flows
 
 **1. User Registers an Account (Authentication)**
 
@@ -153,8 +158,7 @@ Outcome: User successfully downloads an expense report for offline use.
 
 
 =======
-![Registration](https://github.com/user-attachments/assets/a15c9d57-eb1f-4eec-a13a-5b
-9e5a7c8d47)
+![Registration](https://github.com/user-attachments/assets/a15c9d57-eb1f-4eec-a13a-5b9e5a7c8d47)
 
 ![Login](https://github.com/user-attachments/assets/4fb9524a-4ea4-47bf-a21d-c31a5b1281ca)
 
@@ -171,72 +175,80 @@ Outcome: User successfully downloads an expense report for offline use.
 
 ## 4. Information Architecture and Technical Design
 
-Technology Stack:
+**Frontend (React + Redux)**:
+- `React Router`: Page navigation
+- `Redux`: Global state management
+- `Axios`: API integration
+- `Bootstrap` & `Material Icons`: Styling
 
-Frontend: React
+**Backend (Node.js + Express.js)**:
+- RESTful API architecture
+- JWT for secure login/authentication
+- Role-based access using middleware
+- `dotenv`, `bcrypt`, `cors` for environment, security
 
-Backend: Node.js with Express
+**Database (MongoDB via Mongoose)**:
 
-Database: PostgreSQL
+**Users Collection**:
+- _id (ObjectId)
+- name
+- email (unique)
+- password (hashed)
+- role ("user" or "admin")
 
-APIs: REST API
+**Expenses Collection**:
+- _id
+- user_id (ref: User)
+- amount
+- category
+- description
+- date
+- receipt_url (optional)
 
-Hosting: Google Cloud
+**Categories Collection**:
+- _id
+- user_id (ref: User)
+- category_name
+- icon/color
+
+**Security Measures**:
+- JWT tokens in HTTP-only cookies or headers
+- Input validation with Mongoose schema constraints
+- Protected API routes
+
+---
+
+### 5. Project Management and User Testing
+
+**Development Workflow**:
+- GitHub for version control
+- Issues for bugs/features
+- Branching model: `main`, `dev`, `feature/*`
+
+**CI/CD Setup**:
+- Frontend hosted on **AWS**
+- Backend on **Render**
+- Auto-deploy on push via GitHub Actions (CI pipeline)
+
+**Sprint Plan**:
+- **Week 1**: UI layout, basic routing, backend scaffolding
+- **Week 2**: Auth module, MongoDB setup, user dashboard
+- **Week 3**: Expense/category CRUD APIs + frontend forms
+- **Week 4**: Reporting module, charts, UI polish
+- **Week 5**: Testing, bug fixes, deployment
+
+**User Testing Strategy**:
+- Initial testing with 3 real users from each persona
+- Feedback gathered on:
+  - Speed of adding expenses
+  - Usefulness of reports
+  - Clarity of UI
+- Tools: Google Forms, direct interviews
+
+**Metrics Collected**:
+- Time to add 5 expenses
+- Ability to filter by category/date
+- Satisfaction score
 
 
-Database Schema (PostgreSQL)
 
-Users Table: id, name, email, password_hash
-
-Expenses Table: id, user_id, amount, category, date, notes
-
-Categories Table: id, name, icon
-
-API Endpoints (Node.js & Express)
-
-POST /register → User registration
-
-POST /login → User authentication
-
-GET /expenses → Fetch user expenses
-
-POST /expenses → Add new expense
-
-GET /reports → Generate spending reports
-
-GET /export → Download expense data
-
-Frontend (React Components Breakdown)
-
-Dashboard.jsx (Shows total spending)
-
-AddExpenseForm.jsx (Form for adding expenses)
-
-ExpenseList.jsx (List of all expenses)
-
-Reports.jsx (Charts & insights)
-
-
-## 5. Project Management and User Testing
-
-✅ Timeline & Milestones:
-
-Week 1: Planning (Personas, Use Cases, UI Wireframes)
-
-Week 2: Backend Setup (Database & API)
-
-Week 3: Frontend Development (React Components)
-
-Week 4: Testing & Deployment
-
-✅ Agile Methodology (Trello Board)
-
-Tasks categorized as Backlog, In Progress, Done
-
-✅ User Testing Plan:
-
-Conduct user tests with 5 different people
-
-Gather feedback on UI/UX & functionality
-
-Make iterative improvements based on feedback
