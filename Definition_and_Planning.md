@@ -2,240 +2,193 @@
 
 ExpenseWise 
 
-## 1. User Personas
+**Phase 1 – Definition and Planning**
+
+---
+
+### 1. User Personas (Based on Expense Management System)
+
+**Persona 1: Alisha Rai – Young Professional**
+- **Age**: 26
+- **Profession**: Marketing Executive
+- **Location**: Kathmandu, Nepal
+- **Tech Comfort**: High
+- **Goals**:
+  - Track monthly bills and daily expenses
+  - Get visual reports of where her salary goes
+- **Pain Points**:
+  - Time-consuming manual tracking
+  - Wants a mobile-responsive app
+- **Expectations**:
+  - Clean dashboard
+  - Fast, secure login
+  - Easy-to-use charts
+
+**Persona 2: Prakash Bhandari – Small Business Owner**
+- **Age**: 38
+- **Business**: Local Grocery Store
+- **Location**: Pokhara, Nepal
+- **Tech Comfort**: Medium
+- **Goals**:
+  - Track store and personal expenses separately
+  - Generate expense reports monthly for accounting
+- **Pain Points**:
+  - Needs access control for staff
+  - Needs to attach scanned receipts
+- **Expectations**:
+  - Role-based access
+  - Report generation by date/category
+
+**Persona 3: Sneha Shrestha – Student**
+- **Age**: 21
+- **Education**: BBA Student
+- **Location**: Lalitpur, Nepal
+- **Tech Comfort**: High
+- **Goals**:
+  - Track daily lunch, transport, and stationery expenses
+  - Learn budgeting through insights
+- **Pain Points**:
+  - No previous habit of tracking money
+- **Expectations**:
+  - Intuitive design
+  - Color-coded categories
+
+---
+
+### 2. Use Cases and User Flows
+
+**Use Case 1: User Authentication**
+- **Flow**:
+  1. User visits login/signup page
+  2. Enters credentials or signs up with email
+  3. Backend validates and returns JWT token
+  4. Token stored in localStorage
+  5. Redirected to personal dashboard
+
+**Use Case 2: Expense Management**
+- **Flow**:
+  1. User clicks "Add Expense"
+  2. Inputs amount, category, date, description, receipt (optional)
+  3. Frontend sends data to API
+  4. MongoDB stores expense entry under user ID
+
+**Use Case 3: Category Management**
+- **Flow**:
+  1. User opens "Manage Categories"
+  2. Can add/edit/delete categories
+  3. Changes are synced with backend via Express.js API
+
+**Use Case 4: View Dashboard & Reports**
+- **Flow**:
+  1. User selects date range or category filter
+  2. React frontend fetches data from REST API
+  3. Charts (pie/bar) are generated using libraries
+  4. User can export summary as PDF/CSV (future scope)
+
+---
+
+### 3. UI Prototypes (Structure and Philosophy)
+
+**Pages:**
+- **Auth Pages**: Login, Signup, Forgot Password
+- **Main Pages**:
+  - Dashboard
+  - Expense Tracker
+  - Category Management
+  - Reports
+  - Settings
+
+**Component Highlights**:
+- Responsive layout (Bootstrap Grid)
+- Material Icons for UI clarity
+- `tsparticles` for animated backgrounds
+- `react-datepicker`, `moment.js` for date management
+- Use of `Redux` for global state (user session, expense list, etc.)
+
+**UI Guidelines**:
+- Light/dark mode support
+- Use of charts for quick insights
+- One-click export/download (future enhancement)
+- Mobile-first responsive layout
+
+---
+
+### 4. Information Architecture and Technical Design
+
+**Frontend (React + Redux)**:
+- `React Router`: Page navigation
+- `Redux`: Global state management
+- `Axios`: API integration
+- `Bootstrap` & `Material Icons`: Styling
+
+**Backend (Node.js + Express.js)**:
+- RESTful API architecture
+- JWT for secure login/authentication
+- Role-based access using middleware
+- `dotenv`, `bcrypt`, `cors` for environment, security
+
+**Database (MongoDB via Mongoose)**:
+
+**Users Collection**:
+- _id (ObjectId)
+- name
+- email (unique)
+- password (hashed)
+- role ("user" or "admin")
+
+**Expenses Collection**:
+- _id
+- user_id (ref: User)
+- amount
+- category
+- description
+- date
+- receipt_url (optional)
+
+**Categories Collection**:
+- _id
+- user_id (ref: User)
+- category_name
+- icon/color
+
+**Security Measures**:
+- JWT tokens in HTTP-only cookies or headers
+- Input validation with Mongoose schema constraints
+- Protected API routes
+
+---
+
+### 5. Project Management and User Testing
+
+**Development Workflow**:
+- GitHub for version control
+- Issues for bugs/features
+- Branching model: `main`, `dev`, `feature/*`
+
+**CI/CD Setup**:
+- Frontend hosted on **AWS**
+- Backend on **Render**
+- Auto-deploy on push via GitHub Actions (CI pipeline)
+
+**Sprint Plan**:
+- **Week 1**: UI layout, basic routing, backend scaffolding
+- **Week 2**: Auth module, MongoDB setup, user dashboard
+- **Week 3**: Expense/category CRUD APIs + frontend forms
+- **Week 4**: Reporting module, charts, UI polish
+- **Week 5**: Testing, bug fixes, deployment
+
+**User Testing Strategy**:
+- Initial testing with 3 real users from each persona
+- Feedback gathered on:
+  - Speed of adding expenses
+  - Usefulness of reports
+  - Clarity of UI
+- Tools: Google Forms, direct interviews
+
+**Metrics Collected**:
+- Time to add 5 expenses
+- Ability to filter by category/date
+- Satisfaction score
 
-Persona 1: Niresh Lamsal
 
-Age: 30
 
-Occupation: Digital Marketer
-
-Tech Level: Medium
-
-Goals: Wants to track monthly expenses easily and analyze spending trends.
-
-Pain Points: Finds spreadsheets too complex, often forgets to log expenses.
-
-Behavior: Uses web apps on both desktop and mobile; prefers simple, intuitive interfaces.
-
-
-Persona 2: Bikram Poudel
-
-Age: 36
-
-Occupation: Small Business Owner
-
-Tech Level: High
-
-Goals: Wants to categorize business expenses and export data for tax reporting.
-
-Pain Points: Needs clear transaction categories, easy export options, and automated calculations.
-
-Behavior: Uses financial apps frequently; values automation and reporting features.
-
-
-Persona 3: Bharat Dawadi
-
-Age: 24
-
-Occupation: University Student
-
-Tech Level: Medium
-
-Goals: Wants to set budgets and track personal spending habits to save money.
-
-Pain Points: Struggles with overspending and wants alerts when exceeding budget limits.
-
-Behavior: Primarily mobile user; prefers push notifications and visual data representation.
-
-
-
-## 2. Use Cases and User Flows
-
-**1. User Registers an Account (Authentication)**
-
-Actors: User, System
-
-Preconditions: User does not have an account.
-
-Flow of Events:
-
-User navigates to the registration page.
-
-User inputs email, name, and password.
-
-System validates inputs and checks for existing email.
-
-If valid, system creates an account and stores encrypted password.
-
-User receives a confirmation email and can now log in.
-
-Outcome: User successfully registers and can start using the app.
-
-
-**2. User Adds a New Expense (Data Entry)**
-
-Actors: User, System
-
-Preconditions: User must be logged in.
-
-Flow of Events:
-
-User clicks on the "Add Expense" button.
-
-User enters amount, category, date, and optional notes.
-
-System validates and stores expense in the database.
-
-System updates total spending and displays the new entry.
-
-Outcome: Expense is successfully added and visible in the dashboard.
-
-
-**3. User Views Expense Reports (Data Visualization)**
-
-Actors: User, System
-
-Preconditions: User has recorded expenses.
-
-Flow of Events:
-
-User navigates to the "Reports" section.
-
-System fetches and categorizes expense data.
-
-System generates graphs and statistics (e.g., pie chart of spending by category).
-
-User can filter by date range, category, or custom tags.
-
-Outcome: User gains insights into spending patterns through graphical reports.
-
-
-**4. User Sets a Budget and Gets Alerts (Budgeting Feature)**
-
-Actors: User, System
-
-Preconditions: User must be logged in and have recorded expenses.
-
-Flow of Events:
-
-User navigates to "Settings" and sets a monthly budget.
-
-System stores the budget limit and tracks spending against it.
-
-When expenses reach 80% of the budget, the system sends a warning.
-
-If expenses exceed 100%, the system sends an alert.
-
-Outcome: User is notified when approaching or exceeding budget limits.
-
-
-**5. User Exports Transactions as PDF (Data Exporting)**
-
-Actors: User, System
-
-Preconditions: User must be logged in and have recorded expenses.
-
-Flow of Events:
-
-User goes to "Export Data" section.
-
-User selects a date range and exports PDF.
-
-System generates the file and provides a download link.
-
-Outcome: User successfully downloads an expense report for offline use.
-
-
-
-## 3. UI Prototypes
-
-
-
-=======
-![Registration](https://github.com/user-attachments/assets/a15c9d57-eb1f-4eec-a13a-5b9e5a7c8d47)
-
-![Login](https://github.com/user-attachments/assets/4fb9524a-4ea4-47bf-a21d-c31a5b1281ca)
-
-![Dashboard](https://github.com/user-attachments/assets/fa6f9486-4577-480b-9190-b2be2ba75aee)
-
-![Add expense](https://github.com/user-attachments/assets/cfaeb044-f19d-40e7-ba15-fbedf33e6482)
-
-![Reports](https://github.com/user-attachments/assets/752e670f-3317-46e7-821b-7d453e1d2a12)
-
-![Settings](https://github.com/user-attachments/assets/bb8e7a7d-2542-43a8-abbf-5096907e2806)
-
-**Colors will be added during the implementation!**
-
-
-## 4. Information Architecture and Technical Design
-
-Technology Stack:
-
-Frontend: React
-
-Backend: Node.js with Express
-
-Database: PostgreSQL
-
-APIs: REST API
-
-Hosting: Google Cloud
-
-
-Database Schema (PostgreSQL)
-
-Users Table: id, name, email, password_hash
-
-Expenses Table: id, user_id, amount, category, date, notes
-
-Categories Table: id, name, icon
-
-API Endpoints (Node.js & Express)
-
-POST /register → User registration
-
-POST /login → User authentication
-
-GET /expenses → Fetch user expenses
-
-POST /expenses → Add new expense
-
-GET /reports → Generate spending reports
-
-GET /export → Download expense data
-
-Frontend (React Components Breakdown)
-
-Dashboard.jsx (Shows total spending)
-
-AddExpenseForm.jsx (Form for adding expenses)
-
-ExpenseList.jsx (List of all expenses)
-
-Reports.jsx (Charts & insights)
-
-
-## 5. Project Management and User Testing
-
-✅ Timeline & Milestones:
-
-Week 1: Planning (Personas, Use Cases, UI Wireframes)
-
-Week 2: Backend Setup (Database & API)
-
-Week 3: Frontend Development (React Components)
-
-Week 4: Testing & Deployment
-
-✅ Agile Methodology (Trello Board)
-
-Tasks categorized as Backlog, In Progress, Done
-
-✅ User Testing Plan:
-
-Conduct user tests with 5 different people
-
-Gather feedback on UI/UX & functionality
-
-Make iterative improvements based on feedback
