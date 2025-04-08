@@ -1,6 +1,6 @@
 # Project Phase 1 - Definition and planning
 
-The Expense Tracker 
+ExpenseWise 
 
 ## 1. User Personas
 
