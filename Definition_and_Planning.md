@@ -153,7 +153,8 @@ Outcome: User successfully downloads an expense report for offline use.
 
 
 =======
-![Registration](https://github.com/user-attachments/assets/a15c9d57-eb1f-4eec-a13a-5b9e5a7c8d47)
+![Registration](https://github.com/user-attachments/assets/a15c9d57-eb1f-4eec-a13a-5b
+9e5a7c8d47)
 
 ![Login](https://github.com/user-attachments/assets/4fb9524a-4ea4-47bf-a21d-c31a5b1281ca)
 
