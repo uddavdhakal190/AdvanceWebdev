@@ -245,10 +245,10 @@ Outcome: User successfully downloads an expense report for offline use.
   - Clarity of UI
 - Tools: Google Forms, direct interviews
 
-**Metrics Collected**:
-- Time to add 5 expenses
-- Ability to filter by category/date
-- Satisfaction score
+**Feedback Collection**:
+- Necessary changes will be made
+- Target to make user friendly
+
 
 
 
