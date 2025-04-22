@@ -1,1 +1,1 @@
-Developing Expense Tracker using MERN stack with cloud based deployment.
+Developing Expense Tracker application using MERN stack with cloud based deployment.
