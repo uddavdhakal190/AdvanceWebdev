@@ -206,6 +206,6 @@ Real-time financial summaries
 User Feedback
 Toast notifications for all user actions
 
-Console logs for development/debugging
+Console logs for development/debugging 
 
 
