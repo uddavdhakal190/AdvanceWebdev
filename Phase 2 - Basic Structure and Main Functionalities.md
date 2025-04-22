@@ -1,211 +1,124 @@
-Phase 2 - Basic Structure and Main Functionalities
-
-1. Environment Setup
-Frontend
-Framework: React.js
-
-Routing: react-router-dom
-
-Notifications: react-toastify
-
-Environment Variables:
-
-.env:
-
-env
-Copy
-Edit
-REACT_APP_API_URL=http://localhost:5000
-Backend
-Framework: Node.js with Express.js
-
-Environment Variables:
-
-.env:
-
-env
-Copy
-Edit
-PORT=5000
-MONGO_CONN=mongodb://localhost:27017/expense-tracker
-JWT_SECRET=your_jwt_secret_key
-Database
-Database: MongoDB
-
-ODM: Mongoose
-
-Hosting
-Configured for deployment on:
-
-Localhost
-
-Microsoft Azure Cloud Platform
-
-2. Backend Architecture
-Framework
-Express.js
-
-Routes
-/auth: User authentication (login, signup)
-
-/expenses: CRUD operations for expenses (JWT protected)
-
-/products: Sample protected route
-
-Middleware
-Auth.js: JWT-based route protection
-
-AuthValidation.js: Request payload validation using Joi
-
-Controllers
-AuthController.js: Handles user signup and login logic
-
-ExpenseController.js: Manages expense creation, retrieval, and deletion
-
-Security
-Password hashing using bcrypt
-
-Authentication via JWT
-
-Input validation with Joi
-
-3. Frontend Architecture
-Framework
-React.js
-
-Routing
-react-router-dom for navigation
-
-Routes
-Public: /login, /signup
-
-Private: /home (JWT protected)
-
-Components
-Signup.js, Login.js: Authentication forms
-
-Home.js: User dashboard with expenses overview
-
-ExpenseForm.js: Add new expense
-
-ExpenseTable.js: List all expenses
-
-ExpenseDetails.js: Display total income, expenses, and balance
-
-State Management
-React Hooks (local state)
-
-Notifications
-react-toastify for user feedback on actions
-
-4. Database Structure
-MongoDB Collections
-users
-
-name: String
-
-email: String
-
-password: Hashed string
-
-expenses (embedded schema):
-
-text: Description
-
-amount: Number
-
-createdAt: Date
-
-Mongoose
-DB connection managed via db.js
-
-5. Project Structure and Architecture
-Frontend
-bash
-Copy
-Edit
-src/
-├── pages/             # Component pages
-├── utils.js           # Utility functions
-└── index.js           # App initialization with Router
-Backend
-graphql
-Copy
-Edit
-server/
-├── controllers/       # Request logic
-├── models/            # Mongoose schemas
-├── routes/            # API routes
-├── middlewares/       # Auth and validation
-└── index.js           # API server entry point
-Design Principles
-RESTful API structure
-
-JWT authentication
-
-Separation of concerns (routes, controllers, middleware)
-
-6. Core Functionalities
-Authentication
-User registration and login
-
-JWT-based session management
-
-Joi validation on inputs
-
-Expense Management
-Create, read, and delete expenses
-
-Real-time calculations: total income, total expenses, and current balance
-
-Route Protection
-Backend: JWT middleware
-
-Frontend: Protected routes using React Router
-
-Notifications
-User-friendly success and error messages using react-toastify
-
-7. Code Quality & Documentation
-Code Practices
-Clean and modular codebase
-
-Use of modern ES6+ features: async/await, destructuring, arrow functions
-
-Documentation
-Minimal inline comments
-
-Self-explanatory function and file naming
-
-Clearly organized folder structure
-
-8. Testing & Error Handling
-Testing
-Basic setup using Jest
-
-Placeholder test for App component (App.test.js)
-
-Error Handling
-Backend: Standardized error responses (400, 401, 500)
-
-Frontend: Error display via react-toastify
-
-9. User Interface & Interaction
-UI Design
-Minimalistic and responsive design
-
-CSS used for styling (index.css)
-
-User Interaction
-Login, signup, and expense submission forms
-
-Action buttons for logout and expense deletion
-
-Real-time financial summaries
-
-User Feedback
-Toast notifications for all user actions
-
-Console logs for development/debugging 
-
-
+Basic structure and main functionalities
+
+
+
+
+ ### 1. Environment
+- **Frontend**: React.js with `react-router-dom` for routing and `react-toastify` for notifications.
+- **Backend**: Node.js with Express.js for RESTful APIs.
+- **Database**: MongoDB via Mongoose for data modeling.
+- **Hosting**: 
+  - Frontend: Configured for deployment on Vercel.
+  - Backend: Configured for deployment on Vercel.
+- **Environment Variables**:
+  - Frontend: .env file with `REACT_APP_API_URL`.
+  - Backend: .env file with `PORT`, `MONGO_CONN`, and `JWT_SECRET`.
+
+---
+
+### 2. Backend
+- **Framework**: Express.js.
+- **Routes**:
+  - `/auth`: Handles user authentication (login, signup).
+  - `/expenses`: Handles expense CRUD operations (protected by JWT middleware).
+  - `/products`: Example route for product data (protected by JWT middleware).
+- **Middleware**:
+  - Auth.js: Ensures JWT-based authentication.
+  - AuthValidation.js: Validates request payloads using Joi.
+- **Controllers**:
+  - AuthController.js: Handles signup and login logic.
+  - ExpenseController.js: Handles expense creation, retrieval, and deletion.
+- **Security**:
+  - Password hashing with `bcrypt`.
+  - JWT for authentication.
+  - Input validation with Joi.
+
+---
+
+### 3. Frontend
+- **Framework**: React.js.
+- **Routing**: `react-router-dom` for navigation.
+  - Public routes: `/login`, `/signup`.
+  - Private route: home (protected by authentication).
+- **Components**:
+  - Signup.js and Login.js: Handle user authentication.
+  - Home.js: Displays user dashboard with expense tracking.
+  - ExpenseForm.js: Form to add new expenses.
+  - ExpenseTable.js: Displays a list of expenses.
+  - ExpenseDetails.js: Shows income, expense, and balance details.
+- **State Management**: Local state with React hooks.
+- **Notifications**: `react-toastify` for success/error messages.
+
+---
+
+### 4. Database
+- **Database**: MongoDB.
+- **Collections**:
+  - `users`: Stores user details (name, email, hashed password) and embedded `expenses`.
+  - Embedded `expenses` schema:
+    - `text`: Description of the expense.
+    - `amount`: Amount of the expense.
+    - `createdAt`: Timestamp.
+- **Connection**: Managed via Mongoose (`db.js`).
+
+---
+
+### 5. Basic Structure and Architecture
+- **Frontend**:
+  - Organized into `src/pages` for React components and utils.js for utility functions.
+  - index.js initializes the app with React Router.
+- **Backend**:
+  - Modular structure with separate folders for `Routes`, `Controllers`, `Models`, and `Middlewares`.
+  - Centralized entry point (`index.js`) for API setup.
+- **Architecture**:
+  - RESTful API design.
+  - JWT-based authentication for secure access.
+  - Separation of concerns between routes, controllers, and middleware.
+
+---
+
+### 6. Functionalities
+- **Authentication**:
+  - User signup and login with validation and JWT-based authentication.
+- **Expense Management**:
+  - Add, view, and delete expenses.
+  - Calculate income, expenses, and balance.
+- **Protected Routes**:
+  - Backend routes and frontend pages are secured with JWT and React Router.
+- **Notifications**:
+  - Success and error messages displayed using `react-toastify`.
+
+---
+
+### 7. Code Quality and Documentation
+- **Code Quality**:
+  - Clean and modular code structure.
+  - Use of modern JavaScript features (e.g., async/await, destructuring).
+- **Documentation**:
+  - Minimal inline comments in the code.
+  - Backend routes and middleware are self-explanatory.
+  - Frontend components are straightforward but lack detailed comments.
+
+---
+
+### 8. Testing and Error Handling
+- **Testing**:
+  - Basic test setup with Jest (`App.test.js`).
+  - Limited test coverage (only a placeholder test for the App component).
+- **Error Handling**:
+  - Backend: Proper error responses for validation errors, authentication failures, and server errors.
+  - Frontend: Error messages displayed using `react-toastify`.
+
+---
+
+### 9. User Interface and Interaction
+- **UI Design**:
+  - Minimalistic and responsive design.
+  - Styled with CSS (`index.css`).
+- **Interaction**:
+  - Forms for login, signup, and adding expenses.
+  - Buttons for logout and deleting expenses.
+  - Real-time updates for income, expenses, and balance.
+- **User Feedback**:
+  - Notifications for success and error events.
+  - Console logs for debugging purposes.
