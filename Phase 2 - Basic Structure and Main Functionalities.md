@@ -111,4 +111,4 @@ Buttons for logout and deleting expenses.
 Real-time updates for income, expenses, and balance.
 User Feedback:
 Notifications for success and error events.
-Console logs for debugging purposes.
+Console logs for debugging purposes. 
