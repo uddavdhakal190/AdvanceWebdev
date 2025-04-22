@@ -1,9 +1,11 @@
 Phase 2 - Basic Structure and Main Functionalities
 
 1. Environment
-   
+
 Frontend: React.js with react-router-dom for routing and react-toastify for notifications.
+
 Backend: Node.js with Express.js for RESTful APIs.
+
 Database: MongoDB via Mongoose for data modeling.
 Hosting:
 Frontend: Configured for deployment on both local host and Microsoft Azure Cloud Platform.
@@ -12,7 +14,7 @@ Environment Variables:
 Frontend: .env file with REACT_APP_API_URL.
 Backend: .env file with PORT, MONGO_CONN, and JWT_SECRET.
 
-2. Backend
+3. Backend
    
 Framework: Express.js.
 Routes:
