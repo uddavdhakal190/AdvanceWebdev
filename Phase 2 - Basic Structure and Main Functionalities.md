@@ -8,8 +8,8 @@ Basic structure and main functionalities
 - **Backend**: Node.js with Express.js for RESTful APIs.
 - **Database**: MongoDB via Mongoose for data modeling.
 - **Hosting**: 
-  - Frontend: Configured for deployment on Vercel.
-  - Backend: Configured for deployment on Vercel.
+  - Frontend: Configured for deployment on Microsoft Azure Cloud and hosted initially locally at first.
+  - Backend: Configured for deployment on Microsoft Azure Cloud platform and initially hosted locally.
 - **Environment Variables**:
   - Frontend: .env file with `REACT_APP_API_URL`.
   - Backend: .env file with `PORT`, `MONGO_CONN`, and `JWT_SECRET`.
