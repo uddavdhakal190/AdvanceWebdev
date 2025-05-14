@@ -41,6 +41,16 @@ app.use((err, req, res, next) => {
 // Define the port
 const PORT = process.env.PORT || 8080;
 
+// Production Script
+app.use(express.static("./client/build"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+
+
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
