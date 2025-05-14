@@ -23,12 +23,19 @@ app.use(cors()); // Enable CORS
 app.use("/api/v1/users", require("./routes/userRoute"));
 app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 
-// Serve static files from the React frontend
-app.use(express.static(path.join(__dirname, "./client/build")));
+// Serve static files from the React frontend in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, "./client/build")));
+  
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+}
 
-// Handle React routing, return all requests to React app
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
 });
 
 // Define the port
