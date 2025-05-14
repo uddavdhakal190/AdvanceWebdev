@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: expense-tracker
+    env: node
+    nodeVersion: 18.x
+    buildCommand: cd client && npm install && npm run build && cd .. && npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: PORT
+        value: 10000 

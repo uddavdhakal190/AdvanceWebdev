@@ -18,7 +18,7 @@ app.use(express.json()); // Parse JSON request bodies
 // Configure CORS
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://mern-ud-h5hge9d2bqddezhx.northeurope-01.azurewebsites.net', 'http://localhost:3000']
+    ? ['https://expense-tracker.onrender.com', 'http://localhost:3000']
     : 'http://localhost:3000',
   credentials: true,
   optionsSuccessStatus: 200
@@ -31,10 +31,15 @@ app.use("/api/v1/transections", require("./routes/transectionRoutes"));
 
 // Serve static files from the React frontend in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, "./client/build")));
+  // Serve static files from the React build directory
+  app.use(express.static(path.join(__dirname, "client/build")));
   
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  // Handle React routing, return all requests to React app
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith('/api/')) {
+      return next();
+    }
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
 
