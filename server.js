@@ -25,9 +25,13 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+// Import routes
+const userRoutes = require("./routes/userRoute");
+const transectionRoutes = require("./routes/transectionRoutes");
+
 // API Routes
-app.use("/api/v1/users", require("./routes/userRoute"));
-app.use("/api/v1/transections", require("./routes/transectionRoutes"));
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/transections", transectionRoutes);
 
 // Serve static files from the React frontend in production
 if (process.env.NODE_ENV === 'production') {
