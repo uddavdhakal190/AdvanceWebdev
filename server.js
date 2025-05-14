@@ -8,16 +8,22 @@ const connectDb = require("./config/connectDb");
 // Load environment variables from .env file
 dotenv.config();
 
-// Connect to the database
-connectDb();
-
 // Initialize Express app
 const app = express();
 
 // Middlewares
 app.use(morgan("dev")); // Logging middleware
 app.use(express.json()); // Parse JSON request bodies
-app.use(cors()); // Enable CORS
+
+// Configure CORS
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? ['https://mern-ud-h5hge9d2bqddezhx.northeurope-01.azurewebsites.net', 'http://localhost:3000']
+    : 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 // API Routes
 app.use("/api/v1/users", require("./routes/userRoute"));
@@ -34,14 +40,28 @@ if (process.env.NODE_ENV === 'production') {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+  console.error('Error:', err);
+  res.status(500).json({
+    success: false,
+    message: 'Internal Server Error',
+    error: process.env.NODE_ENV === 'production' ? 'An error occurred' : err.message
+  });
 });
 
 // Define the port
 const PORT = process.env.PORT || 8080;
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Connect to database and start server
+const startServer = async () => {
+  try {
+    await connectDb();
+    app.listen(PORT, () => {
+      console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+startServer();
