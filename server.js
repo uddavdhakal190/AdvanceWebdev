@@ -18,10 +18,16 @@ app.use(express.json()); // Parse JSON request bodies
 // Configure CORS
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://expense-tracker.onrender.com', 'http://localhost:3000']
+    ? [
+        'https://expense-tracker.onrender.com',
+        'https://expense-tracker-1ovy.onrender.com',
+        'http://localhost:3000'
+      ]
     : 'http://localhost:3000',
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
 

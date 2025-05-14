@@ -1,14 +1,20 @@
 import axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'production' 
-  ? 'https://expense-tracker.onrender.com'
-  : 'http://localhost:8080';
+// Get the current domain
+const getBaseURL = () => {
+  if (process.env.NODE_ENV === 'production') {
+    // Use the same domain as the frontend
+    return window.location.origin;
+  }
+  return 'http://localhost:8080';
+};
 
 const axiosInstance = axios.create({
-  baseURL,
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true
 });
 
 export default axiosInstance; 
