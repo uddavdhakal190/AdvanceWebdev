@@ -3,8 +3,8 @@
 - **Backend**: Node.js with Express.js for RESTful APIs.
 - **Database**: MongoDB via Mongoose for data modeling.
 - **Hosting**: 
-  - Frontend: Configured for deployment on Microsoft Azure Cloud.
-  - Backend: Configured for deployment on Microsoft Azure Cloud.
+  - Frontend: Configured for deployment on Render.
+  - Backend: Configured for deployment on Render.
 - **Environment Variables**:
   - Frontend: .env file with `REACT_APP_API_URL`.
   - Backend: .env file with `PORT` and `MONGO_URI`.
