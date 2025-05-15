@@ -46,9 +46,9 @@ bcryptjs for password hashing
 
 Development Tools:
 
-Git for version control
-npm for package management
-Render for deployment
+Git for version control 
+npm for package management 
+Render for deployment 
 
 🚂 Development Process
 
