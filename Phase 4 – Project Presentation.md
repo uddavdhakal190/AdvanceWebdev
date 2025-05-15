@@ -16,25 +16,126 @@ The application was developed as part of the Advanced Web Development course, de
 
 📊 Use Case Implementation Analysis
 
+✅ User Authentication Use Cases
+
 | Use Case              | Status        | Implementation Details                                                                                    | Notes                                                 |
 | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
 | **User Registration** | ✅ Implemented | - Form validation<br>- Password hashing with `bcrypt`<br>- MongoDB user storage<br>- JWT token generation | Successfully implemented with security best practices |
 | **User Login**        | ✅ Implemented | - JWT-based authentication<br>- Protected routes<br>- Session management<br>- Error handling              | Robust implementation with proper security measures   |
 
-📌 Use Case Summary
+💰 Transaction Management Use Cases
 
-| Use Case | Implemented | Demonstration / Notes |
-|----------|-------------|----------------------|
-| User Registration | Yes | Implemented with email validation and password hashing |
-| User Login | Yes | Secure authentication using JWT |
-| Add Transaction | Yes | Form validation and real-time updates |
-| Edit Transaction | Yes | Inline editing with immediate database updates |
-| Delete Transaction | Yes | Confirmation dialog and instant UI update |
-| View Transaction History | Yes | Paginated list with filtering options |
-| Protected Routes | Yes | JWT-based route protection |
-| Responsive Design | Yes | Works on desktop and mobile devices |
-| Dark Mode/Light Mode | No | In next update |
-| Export to Excel | No | In next update |
+| Use Case                     | Status        | Implementation Details                                                                   | Notes                                           |
+| ---------------------------- | ------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| **Add Transaction**          | ✅ Implemented | - Form validation<br>- Real-time UI updates<br>- MongoDB integration<br>- Error handling | Core functionality working as expected          |
+| **Edit Transaction**         | ✅ Implemented | - Inline editing<br>- Immediate DB updates<br>- Validation checks                        | Smooth UX with proper error handling            |
+| **Delete Transaction**       | ✅ Implemented | - Confirmation dialog<br>- Soft delete logic<br>- UI state management                    | Includes safety to prevent accidental deletions |
+| **View Transaction History** | ✅ Implemented | - Paginated list<br>- Basic filtering<br>- Date-based sorting                            | Basic implementation with room for enhancement  |
+
+📁 Data Management Use Cases
+
+| Use Case                | Status                   | Implementation Details                             | Notes                                 |
+| ----------------------- | ------------------------ | -------------------------------------------------- | ------------------------------------- |
+| **Data Export**         | ❌ Not Implemented        | - Not prioritized in the initial phase             | Planned for future enhancement        |
+| **Data Visualization**  | ❌ Not Implemented        | - Charts and graphs not yet added                  | Could be introduced in future updates |
+| **Category Management** | ⚠️ Partially Implemented | - Basic category support<br>- No custom categories | Limited to predefined categories      |
+
+
+🔐 Security Use Cases
+
+| Use Case               | Status            | Implementation Details                             | Notes                                      |
+| ---------------------- | ----------------- | -------------------------------------------------- | ------------------------------------------ |
+| **Password Reset**     | ❌ Not Implemented | - Not included in initial scope                    | Planned for future security update         |
+| **Email Verification** | ❌ Not Implemented | - Not prioritized                                  | Could be added for better account security |
+| **Session Management** | ✅ Implemented     | - JWT token expiration<br>- Secure cookie handling | Basic session security implemented         |
+
+
+🔍 Implementation Summary
+✅ Successfully Implemented Features
+Authentication
+
+Secure user registration and login
+
+JWT-based session management
+
+Transaction Management
+
+Full CRUD support
+
+Real-time UI updates
+
+Basic Security
+
+Password hashing
+
+Protected routes
+
+CORS configuration
+
+⚠️ Partially Implemented Features
+Category Management
+
+Predefined categories only
+
+No custom category creation
+
+Basic filtering support
+
+❌ Not Yet Implemented Features
+Advanced Data Management
+
+Data export
+
+Data visualization
+
+Advanced filtering
+
+Security Enhancements
+
+Password reset
+
+Email verification
+
+Two-factor authentication
+
+🎯 Future Implementation Roadmap
+🔺 High Priority
+ Implement data export functionality
+
+ Enhance category management (custom categories)
+
+ Add basic data visualization (charts, graphs)
+
+🔸 Medium Priority
+ Add password reset feature
+
+ Implement email verification
+
+ Improve advanced filtering options
+
+🔻 Low Priority
+ Add two-factor authentication (2FA)
+
+ Add advanced data visualization
+
+ Implement multi-currency support
+
+📝 Implementation Notes
+⏳ Why Some Features Were Deferred
+Time Constraints: Focused on delivering core features first
+
+Technical Complexity: Some features require additional planning and infrastructure
+
+User Priorities: Prioritized features based on user needs and feedback
+
+🔄 Next Steps
+
+| Term            | Planned Features                                                                  |
+| --------------- | --------------------------------------------------------------------------------- |
+| **Short Term**  | - Implement data export<br>- Add basic charts<br>- Improve category system        |
+| **Medium Term** | - Password reset<br>- Email verification<br>- Advanced filtering options          |
+| **Long Term**   | - Two-factor authentication<br>- Multi-currency support<br>- Full analytics suite |
+
 
 ✍️ Technical Implementation
 
