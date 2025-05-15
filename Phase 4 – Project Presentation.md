@@ -50,8 +50,10 @@ The application was developed as part of the Advanced Web Development course, de
 | **Session Management** | ✅ Implemented     | - JWT token expiration<br>- Secure cookie handling | Basic session security implemented         |
 
 
-🔍 Implementation Summary
-✅ Successfully Implemented Features
+🔍 Implementation Summary  
+
+✅ Successfully Implemented Features  
+
 Authentication
 
 Secure user registration and login
@@ -72,7 +74,8 @@ Protected routes
 
 CORS configuration
 
-⚠️ Partially Implemented Features
+⚠️ Partially Implemented Features 
+
 Category Management
 
 Predefined categories only
@@ -81,7 +84,8 @@ No custom category creation
 
 Basic filtering support
 
-❌ Not Yet Implemented Features
+❌ Not Yet Implemented Features  
+
 Advanced Data Management
 
 Data export
@@ -98,35 +102,37 @@ Email verification
 
 Two-factor authentication
 
-🎯 Future Implementation Roadmap
-🔺 High Priority
+🎯 Future Implementation Roadmap  
+
+🔺 High Priority  
  Implement data export functionality
 
  Enhance category management (custom categories)
 
  Add basic data visualization (charts, graphs)
 
-🔸 Medium Priority
+🔸 Medium Priority  
  Add password reset feature
 
  Implement email verification
 
  Improve advanced filtering options
 
-🔻 Low Priority
+🔻 Low Priority  
  Add two-factor authentication (2FA)
 
  Add advanced data visualization
 
  Implement multi-currency support
 
-📝 Implementation Notes
-⏳ Why Some Features Were Deferred
-Time Constraints: Focused on delivering core features first
+📝 Implementation Notes  
 
-Technical Complexity: Some features require additional planning and infrastructure
+⏳ Why Some Features Were Deferred  
+Time Constraints: Focused on delivering core features first  
 
-User Priorities: Prioritized features based on user needs and feedback
+Technical Complexity: Some features require additional planning and infrastructure  
+
+User Priorities: Prioritized features based on user needs and feedback  
 
 🔄 Next Steps
 
