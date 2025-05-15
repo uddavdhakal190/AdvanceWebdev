@@ -1,7 +1,7 @@
 🎯 ExpenseTracker: A Modern Personal Finance Management System        
- 
- 
- 📝 Project Overview 
+
+
+📝 Project Overview 
  
 Expense Tracker is a web application designed to help users manage their personal finances effectively. The application allows users to track their income and expenses, view transaction history, and manage their financial records in a user-friendly interface.
 
@@ -78,7 +78,7 @@ Basic Security
 
 Category Management
 
--Predefined categories only
+- Predefined categories only
 
 - No custom category creation
 
@@ -141,6 +141,7 @@ User Priorities: Prioritized features based on user needs and feedback
 | **Short Term**  | - Implement data export<br>- Add basic charts<br>- Improve category system        |
 | **Medium Term** | - Password reset<br>- Email verification<br>- Advanced filtering options          |
 | **Long Term**   | - Two-factor authentication<br>- Multi-currency support<br>- Full analytics suite |
+
 
 
 ✍️ Technical Implementation
@@ -247,7 +248,8 @@ User Experience:
 
 This project successfully demonstrates the implementation of a full-stack web application with modern technologies and best practices. The experience gained in handling authentication, data management, and deployment will be valuable for future projects.
 
-Work Hours Log
+
+✍️ Work Hours Log
 
 | Date  | Used hours | Subject(s) |  Outcome |
 | :---  |     :---:      |     :---:      |     :---:      |
