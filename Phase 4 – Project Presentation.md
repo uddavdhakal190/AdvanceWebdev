@@ -56,74 +56,74 @@ The application was developed as part of the Advanced Web Development course, de
 
 Authentication
 
-Secure user registration and login
+- Secure user registration and login
 
-JWT-based session management
+- JWT-based session management
 
 Transaction Management
 
-Full CRUD support
+- Full CRUD support
 
-Real-time UI updates
+- Real-time UI updates
 
 Basic Security
 
-Password hashing
+- Password hashing
 
-Protected routes
+- Protected routes
 
-CORS configuration
+- CORS configuration
 
 ⚠️ Partially Implemented Features 
 
 Category Management
 
-Predefined categories only
+-Predefined categories only
 
-No custom category creation
+- No custom category creation
 
-Basic filtering support
+- Basic filtering support
 
 ❌ Not Yet Implemented Features  
 
 Advanced Data Management
 
-Data export
+- Data export
 
-Data visualization
+- Data visualization
 
-Advanced filtering
+- Advanced filtering
 
 Security Enhancements
 
-Password reset
+- Password reset
 
-Email verification
+- Email verification
 
-Two-factor authentication
+- Two-factor authentication
 
 🎯 Future Implementation Roadmap  
 
 🔺 High Priority  
- Implement data export functionality
+ - Implement data export functionality
 
- Enhance category management (custom categories)
+-  Enhance category management (custom categories)
 
- Add basic data visualization (charts, graphs)
+ - Add basic data visualization (charts, graphs)
 
 🔸 Medium Priority  
- Add password reset feature
+ - Add password reset feature
 
- Implement email verification
+ - Implement email verification
 
- Improve advanced filtering options
+ - Improve advanced filtering options
 
 🔻 Low Priority  
- Add two-factor authentication (2FA)
+ - Add two-factor authentication (2FA)
 
- Add advanced data visualization
+ - Add advanced data visualization
 
- Implement multi-currency support
+ - Implement multi-currency support
 
 📝 Implementation Notes  
 
