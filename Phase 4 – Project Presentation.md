@@ -1,7 +1,7 @@
 🎯 ExpenseTracker: A Modern Personal Finance Management System        
  
  
- 📝 Project Overview
+ 📝 Project Overview 
  
 Expense Tracker is a web application designed to help users manage their personal finances effectively. The application allows users to track their income and expenses, view transaction history, and manage their financial records in a user-friendly interface.
 
