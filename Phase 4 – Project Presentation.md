@@ -15,106 +15,112 @@ Context:
 The application was developed as part of the Advanced Web Development course, demonstrating the implementation of a full-stack MERN application with modern web development practices.
 
 📊 Use Case Implementation Analysis
-
-1. User Authentication Use Cases
-| Use Case | Status | Implementation Details | Notes |
-|----------|---------|------------------------|--------|
-| User Registration | ✅ Implemented | - Form validation<br>- Password hashing with bcrypt<br>- MongoDB user storage<br>- JWT token generation | Successfully implemented with security best practices |
-| User Login | ✅ Implemented | - JWT-based authentication<br>- Protected routes<br>- Session management<br>- Error handling | Robust implementation with proper security measures |
-2. Transaction Management Use Cases
-| Use Case | Status | Implementation Details | Notes |
-|----------|---------|------------------------|--------|
-| Add Transaction | ✅ Implemented | - Form validation<br>- Real-time UI updates<br>- MongoDB integration<br>- Error handling | Core functionality working as expected |
-| Edit Transaction | ✅ Implemented | - Inline editing<br>- Immediate database updates<br>- Validation checks | Smooth user experience with proper error handling |
-| Delete Transaction | ✅ Implemented | - Confirmation dialog<br>- Soft delete implementation<br>- UI state management | Includes safety measures to prevent accidental deletions |
-| View Transaction History | ✅ Implemented | - Paginated list view<br>- Basic filtering<br>- Date-based sorting | Basic implementation with room for enhancement |
-3. Data Management Use Cases
-| Use Case | Status | Implementation Details | Notes |
-|----------|---------|------------------------|--------|
-| Data Export | ❌ Not Implemented | - Not prioritized in initial phase | Future enhancement planned |
-| Data Visualization | ❌ Not Implemented | - Charts and graphs not added | Could be added in future updates |
-| Category Management | ⚠️ Partially Implemented | - Basic category support<br>- No custom categories | Limited to predefined categories |
-4. Security Use Cases
-| Use Case | Status | Implementation Details | Notes |
-|----------|---------|------------------------|--------|
-| Password Reset | ❌ Not Implemented | - Not included in initial scope | Security enhancement for future |
-| Email Verification | ❌ Not Implemented | - Not prioritized | Could be added for better security |
-| Session Management | ✅ Implemented | - JWT token expiration<br>- Secure cookie handling | Basic security measures in place |
+User Authentication Use Cases
+Use Case	Status	Implementation Details	Notes
+User Registration	✅ Implemented	- Form validation<br>- Password hashing with bcrypt<br>- MongoDB user storage<br>- JWT token generation	Successfully implemented with security best practices
+User Login	✅ Implemented	- JWT-based authentication<br>- Protected routes<br>- Session management<br>- Error handling	Robust implementation with proper security measures
+Transaction Management Use Cases
+Use Case	Status	Implementation Details	Notes
+Add Transaction	✅ Implemented	- Form validation<br>- Real-time UI updates<br>- MongoDB integration<br>- Error handling	Core functionality working as expected
+Edit Transaction	✅ Implemented	- Inline editing<br>- Immediate database updates<br>- Validation checks	Smooth user experience with proper error handling
+Delete Transaction	✅ Implemented	- Confirmation dialog<br>- Soft delete implementation<br>- UI state management	Includes safety measures to prevent accidental deletions
+View Transaction History	✅ Implemented	- Paginated list view<br>- Basic filtering<br>- Date-based sorting	Basic implementation with room for enhancement
+Data Management Use Cases
+Use Case	Status	Implementation Details	Notes
+Data Export	❌ Not Implemented	- Not prioritized in the initial phase	Future enhancement planned
+Data Visualization	❌ Not Implemented	- Charts and graphs not added	Could be added in future updates
+Category Management	⚠️ Partially Implemented	- Basic category support<br>- No custom categories	Limited to predefined categories
+Security Use Cases
+Use Case	Status	Implementation Details	Notes
+Password Reset	❌ Not Implemented	- Not included in the initial scope	Security enhancement for future
+Email Verification	❌ Not Implemented	- Not prioritized	Could be added for better security
+Session Management	✅ Implemented	- JWT token expiration<br>- Secure cookie handling	Basic security measures in place
 🔍 Implementation Analysis
 Successfully Implemented Features
-Core Authentication
+Core Authentication:
+
 Secure user registration
 Protected login system
 JWT-based session management
-Basic Transaction Management
+Basic Transaction Management:
+
 CRUD operations for transactions
 Real-time updates
 Basic validation
-Security Basics
+Security Basics:
+
 Password hashing
 Protected routes
 CORS configuration
 Partially Implemented Features
-Category Management
+Category Management:
 Limited to predefined categories
 No custom category creation
 Basic filtering support
 Not Implemented Features
-Advanced Data Management
+Advanced Data Management:
+
 Data export functionality
 Data visualization
 Advanced filtering
-Enhanced Security
+Enhanced Security:
+
 Password reset
 Email verification
 Two-factor authentication
 🎯 Future Implementation Priorities
 High Priority
-Data export functionality
-Enhanced category management
-Basic data visualization
+Implement data export functionality
+Enhance category management
+Add basic data visualization
 Medium Priority
-Password reset functionality
-Email verification
-Advanced filtering options
+Add password reset functionality
+Implement email verification
+Improve filtering options
 Low Priority
-Two-factor authentication
-Advanced data visualization
-Multi-currency support
+Add two-factor authentication
+Implement advanced data visualization
+Add multi-currency support
 📝 Implementation Notes
 Why Some Features Were Left Out
-Time Constraints
-Focus on core functionality first
+Time Constraints:
+
+Focused on core functionality first
 Prioritized essential features
-Technical Complexity
+Technical Complexity:
+
 Some features required additional infrastructure
 Needed more planning for proper implementation
-User Priority
+User Priority:
+
 Focused on most commonly used features
 Deferred less critical features
 Implementation Challenges
-Technical
+Technical:
+
 CORS configuration issues
 Deployment complexities
 State management optimization
-User Experience
+User Experience:
+
 Balancing simplicity with functionality
 Ensuring responsive design
 Maintaining performance
 🔄 Next Steps
 Short Term
-Implement data export
-Add basic visualization
+Implement data export functionality
+Add basic visualization features
 Enhance category management
 Medium Term
-Add password reset
+Add password reset functionality
 Implement email verification
 Improve filtering options
 Long Term
 Add advanced features
 Implement multi-currency support
-Add advanced security features
-This analysis provides a clear picture of what was implemented, what was partially implemented, and what was left out, along with the reasoning behind these decisions. It also outlines a clear path for future development.
+Enhance security with advanced features
+This analysis provides a professional and structured overview of the implementation status, challenges faced, and a roadmap for future development.
+
 
 📌 Use Case Summary
 
