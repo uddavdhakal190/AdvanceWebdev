@@ -1,8 +1,5 @@
- ExpenseTracker  
- A Modern Personal Finance Management System 
-
-
-
+🎯 ExpenseTracker  
+ A Modern Personal Finance Management System      
 
  📝 Project Overview
  
