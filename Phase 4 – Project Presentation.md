@@ -23,6 +23,8 @@ The application was developed as part of the Advanced Web Development course, de
 | View Transaction History | Yes | Paginated list with filtering options |
 | Protected Routes | Yes | JWT-based route protection |
 | Responsive Design | Yes | Works on desktop and mobile devices |
+| Dark Mode/Light Mode | No | In next update |
+| Export to Excel | No | In next update |
 
 ✍️ Technical Implementation
 
