@@ -4,9 +4,9 @@ Expense Tracker is a web application designed to help users manage their persona
 
 Target Users:
 
-Individuals looking to track personal expenses
-People who want to manage their daily financial transactions
-Users who need a simple, intuitive way to monitor their spending habits
+- Individuals looking to track personal expenses  
+- People who want to manage their daily financial transactions  
+- Users who need a simple, intuitive way to monitor their spending habits  
 
 Context:
 The application was developed as part of the Advanced Web Development course, demonstrating the implementation of a full-stack MERN application with modern web development practices.
@@ -32,17 +32,17 @@ Technologies Used:
 
 Frontend:
 
-React.js for UI components
-Redux for state management
-Ant Design for UI components
-Axios for API calls
+- React.js for UI components  
+- Redux for state management  
+- Ant Design for UI components  
+- Axios for API calls  
 
 Backend:
 
-Node.js & Express.js
-MongoDB with Mongoose
-JWT for authentication
-bcryptjs for password hashing
+- Node.js & Express.js  
+- MongoDB with Mongoose  
+- JWT for authentication  
+- bcryptjs for password hashing  
 
 Development Tools:
 
@@ -54,79 +54,79 @@ Development Tools:
 
 Phase 1: Planning and Setup
 
-Defined project requirements
-Set up development environment
-Created initial project structure
+- Defined project requirements  
+- Set up development environment  
+- Created initial project structure  
 
 Phase 2: Core Development
 
-Implemented user authentication
-Created transaction management system
-Developed UI components
+- Implemented user authentication  
+- Created transaction management system  
+- Developed UI components  
 
 Phase 3: Testing and Deployment
 
-Fixed CORS issues
-Implemented error handling
-Deployed to Render
+- Fixed CORS issues  
+- Implemented error handling  
+- Deployed to Render  
 
 Key Decisions
 
-Architecture:
-Chose MERN stack for full-stack development
-Implemented Redux for state management
-Used Ant Design for consistent UI
+Architecture:  
+- Chose MERN stack for full-stack development  
+- Implemented Redux for state management  
+- Used Ant Design for consistent UI  
 
-Security:
-Implemented JWT authentication
-Added password hashing
-Configured CORS properly
+Security:  
+- Implemented JWT authentication  
+- Added password hashing  
+- Configured CORS properly  
 
 ☀️ Reflection and Future Work
 
 What Worked Well:
 
-User Interface:
-Clean and intuitive design
-Responsive layout
-Smooth user experience
+User Interface:  
+- Clean and intuitive design   
+- Responsive layout   
+- Smooth user experience  
 
 Technical Implementation:
-Secure authentication
-Efficient data management
-Good error handling
+- Secure authentication  
+- Efficient data management  
+- Good error handling  
 
 Challenges Faced:
 
-CORS Configuration:
-Initially had issues with cross-origin requests
-Resolved by proper CORS setup and axios configuration
+CORS Configuration:  
+- Initially had issues with cross-origin requests  
+- Resolved by proper CORS setup and axios configuration  
 
 Deployment:
-Faced path-to-regexp error
-Solved by updating dependencies and configuration
+- Faced path-to-regexp error  
+- Solved by updating dependencies and configuration  
 
 Future Improvements:
 
 Features to Add:
-Data visualization (charts and graphs)
-Export functionality (PDF/Excel)
-Budget planning tools
-Category management
-Multi-currency support
+- Data visualization (charts and graphs)  
+- Export functionality (PDF/Excel)  
+- Budget planning tools  
+- Category management  
+- Multi-currency support  
 
 Technical Improvements:
-Add unit tests
-Implement real-time updates
-Add offline support
-Improve performance optimization
-Add more security features
+- Add unit tests  
+- Implement real-time updates  
+- Add offline support  
+- Improve performance optimization  
+- Add more security features  
 
 User Experience:
-Add dark mode
-Implement more filtering options
-Add search functionality
-Improve mobile responsiveness
+- Add dark mode  
+- Implement more filtering options  
+- Add search functionality  
+- Improve mobile responsiveness  
 
 This project successfully demonstrates the implementation of a full-stack web application with modern technologies and best practices. The experience gained in handling authentication, data management, and deployment will be valuable for future projects.
 
