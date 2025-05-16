@@ -47,8 +47,8 @@ const Analytics = ({ allTransection }) => {
   return (
     <>
       <div className="row m-3">
-        <div className="col-md-3">
-          <div className="card">
+        <div className="col-12 col-md-6 col-lg-3 mb-3">
+          <div className="card h-100">
             <div className="card-header">
               Total Transactions : {totalTransaction}
             </div>
@@ -76,13 +76,13 @@ const Analytics = ({ allTransection }) => {
             </div>
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="card">
+        <div className="col-12 col-md-6 col-lg-3 mb-3">
+          <div className="card h-100">
             <div className="card-header">Total TurnOver : {totalTurnover}</div>
             <div className="card-body">
               <h5 className="text-success">Income : {totalIncomeTurnover}</h5>
               <h5 className="text-danger">Expense : {totalExpenseTurnover}</h5>
-              <div>
+              <div className="d-flex flex-column align-items-center">
                 <Progress
                   type="circle"
                   strokeColor={"green"}

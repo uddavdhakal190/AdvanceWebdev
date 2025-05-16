@@ -1,0 +1,79 @@
+/* Mobile devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .register-form {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .login-form {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .filter-tab {
+    width: 100%;
+  }
+
+  .filter-tab .ant-select-selector {
+    width: 100% !important;
+  }
+
+  .switch-icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .nav-link {
+    font-size: 1rem !important;
+  }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+  .register-form {
+    width: 70% !important;
+  }
+
+  .login-form {
+    width: 70% !important;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .filter-tab {
+    width: 45%;
+  }
+}
+
+/* Small laptops (992px and down) */
+@media (max-width: 992px) {
+  .register-form {
+    width: 50% !important;
+  }
+
+  .login-form {
+    width: 50% !important;
+  }
+} 

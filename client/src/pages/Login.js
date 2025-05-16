@@ -40,8 +40,8 @@ const Login = () => {
       <div className="login-page">
         {loading && <Spinner />}
         <div className="row container">
-          <h1>Expense Management System</h1>
-          <div className="col-md-6">
+          <h1 className="text-center mb-4">Expense Management System</h1>
+          <div className="col-md-6 d-none d-md-block">
             <img src={img} alt="login-img" width={"100%"} height="100%" style={{ borderRadius: '10px', objectFit: 'cover' }} />
           </div>
           <div className="col-md-4 login-form">
@@ -54,11 +54,11 @@ const Login = () => {
               <Form.Item label="Password" name="password">
                 <Input type="password" required />
               </Form.Item>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
                 <Link to="/register">
-                  Not a user ? Click Here to regsiter !
+                  Not a user ? Click Here to register !
                 </Link>
-                <button className="btn">Login</button>
+                <button className="btn w-100 w-md-auto">Login</button>
               </div>
             </Form>
           </div>
