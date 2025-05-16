@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { UserOutlined, LogoutOutlined, MenuOutlined } from "@ant-design/icons";
 import { message } from "antd";
 import "../../styles/HeaderStyles.css";
 
 const Header = () => {
   const [loginUser, setLoginUser] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
@@ -19,6 +21,11 @@ const Header = () => {
     message.success("Logout Successfully");
     navigate("/login");
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg">
@@ -29,15 +36,12 @@ const Header = () => {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
+            onClick={toggleMenu}
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
+            <MenuOutlined className="menu-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarTogglerDemo01">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item d-flex align-items-center">
                 <div className="user-profile">
